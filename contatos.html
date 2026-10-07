@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contatos - Volt Drive</title>
+</head>
+<body>
+    <main class="container"> 
+        
+        <!-- Cabeçalho Padronizado -->
+        <section class="welcome-card"> 
+            <div class="links">
+                <header style="display: flex; align-items: center; gap: 15px;">
+                    <img src="logotipo.jpg" alt="Logo Volt Drive" style="height: 40px; border-radius: 4px;">
+                    <h1 id="titulo">Volt Drive</h1>
+                </header>
+
+                <nav class="menu-principal">
+                    <a href="home.html">Inicio</a>
+                    <a href="modelos.css">Modelos</a>
+                    <a href="contatos.html" class="active">Contatos</a>
+                    <a href="carrinho.html">Carrinho</a>
+                    <a href="sobre_ford.html">Sobre a Ford Enter</a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Seção de Contatos dividida em duas colunas -->
+        <section class="informações">
+            <h2 class="titulo-secao">Fale com a Volt Drive</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px;">
+                
+                <!-- Informações e Mapa (Esquerda) -->
+                <div style="flex: 1; min-width: 280px;">
+                    <p><strong>Telefone:</strong> 0800 123 4567</p>
+                    <p><strong>Email:</strong> contato@voltdrive.com</p>
+                    <p><strong>Endereço:</strong> Av. Paulista, 1000 - São Paulo, SP</p>
+                    <p><strong>Horário de Atendimento:</strong> Seg a Sex, 08h às 18h</p>
+                    
+                    <!-- Espaço reservado para o Mapa -->
+                    <div style="margin-top: 20px; background-color: #eaeaea; height: 200px; display: flex; justify-content: center; align-items: center; border-radius: 8px;">
+                        <p style="color: #666; font-weight: bold;">[ Mapa de Localização ]</p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Preenchimento (Direita) -->
+                <div style="flex: 1; min-width: 280px;">
+                    <h3>Envie sua mensagem</h3>
+                    <form style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                        <input type="text" placeholder="Nome Completo" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+                        <input type="email" placeholder="Email" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+                        <input type="tel" placeholder="Telefone" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+                        <input type="text" placeholder="Assunto" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;">
+                        <textarea placeholder="Mensagem" rows="5" style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; resize: vertical;"></textarea>
+                        
+                        <button type="button" class="btn-primario">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

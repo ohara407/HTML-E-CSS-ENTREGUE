@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Ecomerce de Veículos Hibridos e Elétricos</title>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+        <section class="welcome-card">
+            <div class="links">
+                <header style="display: flex; align-items: center; gap: 15px;">
+                    <!-- Seu Logotipo -->
+                    <img src="logotipo.jpg" alt="Logo Volt Drive" style="height: 40px; border-radius: 4px;">
+                    <h1 id="titulo">Volt Drive</h1>
+                </header>
+
+
+            <nav class="menu-principal">
+                <a href="home.html" class="active">Inicio</a>
+                <a href="modelos.html" class="active">Modelos</a>
+                <a href="contatos.html" class="active">Contatos</a>
+                <a href="carrinho.html" class="active">Carrinho</a>
+                <a href="sobre_ford.html" class="active">Sobre a Ford Enter</a>
+            </nav>
+            </div>
+
+            <div class="menuprimeira-linha">
+                <div class="propaganda">
+                    <h2>Seu próximo carro está aqui!</h2>
+                </div>
+            </div>
+
+            <form class="menu-segunda-linha" role="search" aria-label="Filtrar veículos">
+                <label class="campo-pesquisa">
+                    <span>Pesquisar</span>
+                    <input id="pesquisa-veiculos" type="search" placeholder="Modelo ou marca" autocomplete="off">
+                </label>
+
+                <div class="filtros-tipo" role="group" aria-label="Tipo de anúncio">
+                    <button class="filtro-tipo ativo" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+                    <button class="filtro-tipo" type="button" data-filter="compra" aria-pressed="false">Compras</button>
+                    <button class="filtro-tipo" type="button" data-filter="aluguel" aria-pressed="false">Aluguel</button>
+                </div>
+
+                <label class="campo-marca">
+                    <span>Marca</span>
+                    <select id="filtro-marca">
+                        <option value="todas">Todas as marcas</option>
+                        <option value="BYD">BYD</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Tesla">Tesla</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Volvo">Volvo</option>
+                    </select>
+                </label>
+            </form>
+
+            <p class="resultado-busca" id="resultado-busca" aria-live="polite"></p>
+
+            <div class="carrinhos" id="lista-veiculos">
+                <article class="card" id="mustang-mach-e" data-tipo="compra" data-marca="Ford">
+                    <img class="imagem-veiculo" src="imagens/mustang-mach-e.jpg" alt="Ford Mustang Mach-E" loading="lazy">
+                    <h2>Mustang Mach-E</h2>
+                    <p class="detalhe-veiculo">Ford · Elétrico</p>
+                    <p class="tipo-anuncio">Compra</p>
+                    <p class="preco-veiculo">A partir de R$ 329.900</p>
+                </article>
+
+                <article class="card" data-tipo="aluguel" data-marca="Toyota">
+                    <img class="imagem-veiculo" src="imagens/corolla-hybrid.jpg" alt="Toyota Corolla Hybrid" loading="lazy">
+                    <h2>Corolla Hybrid</h2>
+                    <p class="detalhe-veiculo">Toyota · Híbrido</p>
+                    <p class="tipo-anuncio">Aluguel</p>
+                    <p class="preco-veiculo">A partir de R$ 250/dia</p>
+                </article>
+
+                <article class="card" id="byd-dolphin" data-tipo="compra" data-marca="BYD">
+                    <img class="imagem-veiculo" src="imagens/byd-dolphin.jpg" alt="BYD Dolphin" loading="lazy">
+                    <h2>BYD Dolphin</h2>
+                    <p class="detalhe-veiculo">BYD · Elétrico</p>
+                    <p class="tipo-anuncio">Compra</p>
+                    <p class="preco-veiculo">A partir de R$ 139.900</p>
+                </article>
+
+                <article class="card" data-tipo="aluguel" data-marca="Volvo">
+                    <img class="imagem-veiculo" src="imagens/volvo-xc40.jpg" alt="Volvo XC40 Recharge" loading="lazy">
+                    <h2>Volvo XC40 Recharge</h2>
+                    <p class="detalhe-veiculo">Volvo · Elétrico</p>
+                    <p class="tipo-anuncio">Aluguel</p>
+                    <p class="preco-veiculo">A partir de R$ 480/dia</p>
+                </article>
+
+                <article class="card" data-tipo="compra" data-marca="Tesla">
+                    <img class="imagem-veiculo" src="imagens/tesla-model-3.jpg" alt="Tesla Model 3" loading="lazy">
+                    <h2>Tesla Model 3</h2>
+                    <p class="detalhe-veiculo">Tesla · Elétrico</p>
+                    <p class="tipo-anuncio">Compra</p>
+                    <p class="preco-veiculo">A partir de R$ 320.000</p>
+                </article>
+
+                <article class="card" data-tipo="aluguel" data-marca="Ford">
+                    <img class="imagem-veiculo" src="imagens/ford-escape.jpg" alt="Ford Escape Hybrid" loading="lazy">
+                    <h2>Ford Escape Hybrid</h2>
+                    <p class="detalhe-veiculo">Ford · Híbrido</p>
+                    <p class="tipo-anuncio">Aluguel</p>
+                    <p class="preco-veiculo">A partir de R$ 300/dia</p>
+                </article>
+            </div>
+
+            <section class="secao-promocoes" aria-labelledby="titulo-promocoes">
+                <h2 id="titulo-promocoes">Ofertas especiais</h2>
+                <div class="promocoes">
+                    <article class="bloco-promocao">
+                        <img src="imagens/mustang-mach-e.jpg" alt="Ford Mustang Mach-E azul" loading="lazy">
+                        <div class="detalhes-promocao">
+                            <p class="selo-promocao">Oferta especial</p>
+                            <h3>Ford Mustang Mach-E</h3>
+                            <p class="preco-promocional">A partir de R$ 329.900</p>
+                            <a href="#mustang-mach-e">Ver veículo</a>
+                        </div>
+                    </article>
+
+                    <article class="bloco-promocao">
+                        <img src="imagens/byd-dolphin.jpg" alt="BYD Dolphin" loading="lazy">
+                        <div class="detalhes-promocao">
+                            <p class="selo-promocao">Oferta especial</p>
+                            <h3>BYD Dolphin</h3>
+                            <p class="preco-promocional">A partir de R$ 139.900</p>
+                            <a href="#byd-dolphin">Ver veículo</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>    </main>
+</body>
+</html>

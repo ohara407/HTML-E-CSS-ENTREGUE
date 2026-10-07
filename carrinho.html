@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Volt Drive</title>
+    <link rel="stylesheet" href="carrinho.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">-->
+</head>
+<body>
+    <!-- Cabeçalho -->
+        <section class="welcome-card">
+            <div class="links">
+                <header style="display: flex; align-items: center; gap: 15px;">
+                    <!-- Seu Logotipo -->
+                    <img src="logotipo.jpg" alt="Logo Volt Drive" style="height: 40px; border-radius: 4px;">
+                    <h1 id="titulo">Volt Drive</h1>
+                </header>
+
+
+                <nav class="menu-principal">
+                    <a href="home.html">Início</a>
+                    <a href="modelos.html">Modelos</a>
+                    <a href="contatos.html">Contatos</a>
+                    <a href="carrinho.html" class="active">Carrinho</a>
+                    <a href="sobre_ford.html">Sobre a Ford Enter</a>
+                </nav>
+            </div>
+        </section>
+
+      
+        
+        <div class="titulo-carrinho">
+            <h2>Seu Carrinho</h2>
+        </div>
+
+    
+        
+        <section class="lista-produtos">
+            
+         
+            <div class="produto-card">
+                <div class="imagem-container">
+                    <img src="corolla-hybrid.jpg" alt="Exemplo Carro">
+                </div>
+                <div class="produto-detalhes">
+                    <div class="topo-card">
+                        <h3>Exemplo Carro</h3>
+                        <select class="select-tipo">
+                            <option value="aluguel">Aluguel</option>
+                            <option value="compra">Compra</option>
+                        </select>
+                    </div>
+
+                    <div class="preco-eco">
+                        <i class="fa-solid fa-leaf icone-eco"></i>
+                        <span class="valor">R$ 620/dia</span>
+                    </div>
+
+                    <div class="periodo-info">
+                        <p class="periodo-titulo">Período: 3 dias</p>
+                        <p class="datas">10/10/2026 - 13/10/2026</p>
+                    </div>
+
+                    <div class="acoes-card">
+                        <div class="controle-qtd">
+                            <button class="btn-qtd">-</button>
+                            <span>1</span>
+                            <button class="btn-qtd">+</button>
+                        </div>
+                        <button class="btn-remover" title="Remover item">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD PRODUTO 2 -->
+            <div class="produto-card">
+                <div class="imagem-container">
+                    <img src="mustang-mach-e.jpg" alt="Exemplo Carro">
+                </div>
+                <div class="produto-detalhes">
+                    <div class="topo-card">
+                        <h3>Exemplo Carro</h3>
+                        <select class="select-tipo">
+                            <option value="aluguel">Aluguel</option>
+                            <option value="compra">Compra</option>
+                        </select>
+                    </div>
+
+                    <div class="preco-eco">
+                        <i class="fa-solid fa-leaf icone-eco"></i>
+                        <span class="valor">R$ 620/dia</span>
+                    </div>
+
+                    <div class="periodo-info">
+                        <p class="periodo-titulo">Período: 3 dias</p>
+                        <p class="datas">10/10/2026 - 13/10/2026</p>
+                    </div>
+
+                    <div class="acoes-card">
+                        <div class="controle-qtd">
+                            <button class="btn-qtd">-</button>
+                            <span>1</span>
+                            <button class="btn-qtd">+</button>
+                        </div>
+                        <button class="btn-remover" title="Remover item">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="resumo-container">
+            <h3>Resumo do Pedido</h3>
+            
+            <div class="linha-resumo">
+                <span>Subtotal:</span>
+                <span>R$ 1.860</span>
+            </div>
+            
+            <div class="linha-resumo">
+                <span>Taxas:</span>
+                <span>R$ 50</span>
+            </div>
+
+            <hr>
+
+            <div class="linha-resumo total">
+                <strong>Total:</strong>
+                <strong>R$ 1.910</strong>
+            </div>
+
+            <div class="linha-resumo estimativa">
+                <span>Entrega estimada:</span>
+                <span>15 a 20 min</span>
+            </div>
+
+            <!-- BOTÕES DE AÇÃO -->
+            <div class="botoes-resumo">
+                <button class="btn-finalizar">Finalizar</button>
+                <button class="btn-continuar">Continuar Comprando</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
