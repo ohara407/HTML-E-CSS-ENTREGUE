@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/contatos.html -->
+<html lang="en"><head <!doctype="" html=""><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - Volt Drive</title>
+    <style>
+        /* RESET E CONFIGURAÇÕES BÁSICAS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* CABEÇALHO AZUL */
+        header {
+            background-color: #0088ff;
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        /* MENU DE NAVEGAÇÃO */
+        nav.menu-principal {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav.menu-principal a {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #60a5fa;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: normal;
+            transition: background-color 0.2s;
+        }
+
+        nav.menu-principal a:hover,
+        nav.menu-principal a.active {
+            background-color: #3b82f6;
+        }
+
+        /* CONTAINER PRINCIPAL EM DUAS COLUNAS */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* COLUNA ESQUERDA */
+        .coluna-esquerda {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .coluna-esquerda h2.titulo-secao {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        .card {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            padding: 16px 20px;
+            background-color: #f9fafb;
+        }
+
+        .card-destaque {
+            background-color: #e0f2fe;
+            border: 1.5px solid #38bdf8;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: #000000;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* COLUNA DIREITA */
+        .coluna-direita {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* QUADRO COMPLETO DE PREENCHIMENTO */
+        .quadro-preenchimento {
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            padding: 24px;
+            background-color: #fafafa;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .campo label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            background-color: #ffffff;
+            color: #374151;
+        }
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: #0088ff;
+        }
+
+        .btn-enviar {
+            background-color: #0088ff;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #0066cc;
+        }
+
+        /* MAPA */
+        .mapa-box {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .mapa-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* NOTIFICAÇÃO TOAST */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            display: none;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+<body>
+
+    <!-- CABEÇALHO DA VOLT DRIVE -->
+    <header>
+        <h1>Volt Drive</h1>
+        
+        <nav class="menu-principal">
+            <a href="index.html">Início</a>
+            <a href="modelos.html">Modelos</a>
+            <a href="contatos.html" class="active">Contatos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="sobre_ford.html">Sobre a Ford Enter</a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (LAYOUT LADO A LADO) -->
+    <main class="container">
+
+        <!-- COLUNA DA ESQUERDA -->
+        <section class="coluna-esquerda">
+            <h2 class="titulo-secao">Fale com Volt Drive</h2>
+
+            <div class="card card-destaque">
+                <p>Estamos prontos para te atender...</p>
+            </div>
+
+            <div class="card">
+                <h3>Telefone</h3>
+                <p>(11) 4004-0000 / (11) 99999-8888</p>
+            </div>
+
+            <div class="card">
+                <h3>E-mail</h3>
+                <p>contato@voltdrive.com.br</p>
+            </div>
+
+            <div class="card">
+                <h3>Endereço</h3>
+                <p>Av. Paulista, 1000 – São Paulo, SP</p>
+            </div>
+
+            <div class="card">
+                <h3>Horário de Atendimento</h3>
+                <p>Segunda a Sexta, das 08h às 18h</p>
+            </div>
+        </section>
+
+        <!-- COLUNA DA DIREITA -->
+        <section class="coluna-direita">
+            
+            <!-- QUADRO COMPLETO DE PREENCHIMENTO DO FORMULÁRIO -->
+            <div class="quadro-preenchimento">
+                <form id="formContato" class="form-contato">
+                    <div class="campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" required="">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required="">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 9XXXX-XXXX">
+                    </div>
+
+                    <div class="campo">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto" required="">
+                            <option value="" disabled="" selected="">Selecione um</option>
+                            <option value="duvidas">Dúvidas Gerais</option>
+                            <option value="vendas">Vendas / Modelos</option>
+                            <option value="suporte">Suporte Técnico</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem..." required=""></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAGEM</button>
+                </form>
+            </div>
+
+            <!-- ÁREA DO MAPA -->
+            <div class="mapa-box">
+                </div></section></main></body></html>
