@@ -21,16 +21,20 @@ body {
     color: var(--cor-texto);
     margin: 0;
     padding: 0;
+    width: 100vw;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
 }
 
-/* Container Principal global para alinhar todas as páginas */
+/* Container Principal alterado para cobrir a tela inteira */
 .container {
-    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 40px; /* Ajuste o padding lateral conforme preferir (ex: 40px) */
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    max-width: none; /* Remove a limitação anterior de 1200px */
 }
 
 /* --- 3. CABEÇALHO GLOBAL E MENU --- */
@@ -46,6 +50,7 @@ body {
     padding: 16px 24px;
     background-color: var(--cor-primaria);
     border-radius: var(--raio);
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura disponível */
 }
 
 .links header {
@@ -99,6 +104,9 @@ body {
     .menu-principal {
         justify-content: flex-start;
     }
+    .container {
+        padding: 10px 15px; /* Reduz o padding em telas mobile */
+    }
 }
 
 /* --- 4. SEÇÃO HERO / DESTAQUE (Modelos e Promoções) --- */
@@ -112,6 +120,7 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     flex-wrap: wrap;
     gap: 30px;
+    width: 100%;
 }
 
 .texto-reserva {
@@ -161,6 +170,7 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .card-carro {
@@ -201,6 +211,7 @@ body {
     padding: 20px;
     border-radius: var(--raio);
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    width: 100%;
 }
 
 .informações h2 {
